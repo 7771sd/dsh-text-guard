@@ -1,0 +1,17 @@
+# dsh-text-guard bundle patch.
+#
+# `regional-pairs` neutralizes any two consecutive regional indicators
+# (U+1F1E6-U+1F1FF), which is every flag emoji a peer can compose. Switch to
+# the narrow mode when only one recorded sequence needs neutralizing:
+#
+#   mode: exact
+#   sequences: [[0x1F1F9, 0x1F1FC]]
+- insert:
+    - id: text-guard
+      name: dsh-text-guard
+      config:
+        mode: regional-pairs
+        replacement: '[flag U+{codepoints}]'
+        toolResults: true
+        userMessages: true
+        log: true

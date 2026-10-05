@@ -1,0 +1,42 @@
+{
+  "name": "dsh-text-guard",
+  "version": "1.0.0",
+  "private": false,
+  "description": "DeepSeek Harness plugin: neutralize configured code-point sequences in tool results and entering messages before the session log records them.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "content-filter",
+    "regional-indicator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7771sd/dsh-text-guard.git"
+  },
+  "engines": {
+    "node": "^22.19 || >=24"
+  },
+  "scripts": {
+    "test": "node test/text-guard.test.mjs"
+  }
+}
